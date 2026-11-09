@@ -1,0 +1,64 @@
+scenario,day,Graft,Creat,MAP,Liver
+No drug (untreated),0,1.0,0.5,100.0,1.0
+No drug (untreated),1,0.938,0.522,99.227,0.999
+No drug (untreated),2,0.847,0.573,90.858,0.971
+No drug (untreated),3,0.767,0.633,76.724,0.844
+No drug (untreated),4,0.706,0.69,66.548,0.627
+No drug (untreated),5,0.662,0.738,60.999,0.427
+No drug (untreated),6,0.633,0.777,58.058,0.296
+No drug (untreated),7,0.614,0.805,56.449,0.223
+No drug (untreated),8,0.602,0.824,55.544,0.184
+No drug (untreated),9,0.595,0.836,55.034,0.164
+No drug (untreated),10,0.592,0.843,54.756,0.154
+Drug stopped day 6,0,1.0,0.5,100.0,1.0
+Drug stopped day 6,1,0.991,0.503,99.978,1.0
+Drug stopped day 6,2,0.979,0.509,99.787,0.999
+Drug stopped day 6,3,0.968,0.515,99.259,0.997
+Drug stopped day 6,4,0.959,0.52,98.482,0.991
+Drug stopped day 6,5,0.952,0.524,97.591,0.981
+Drug stopped day 6,6,0.947,0.527,96.808,0.97
+Drug stopped day 6,7,0.941,0.53,95.962,0.954
+Drug stopped day 6,8,0.927,0.537,94.665,0.937
+Drug stopped day 6,9,0.898,0.551,91.64,0.91
+Drug stopped day 6,10,0.852,0.577,85.671,0.856
+Drug stopped day 6,11,0.799,0.614,77.507,0.754
+Drug stopped day 6,12,0.746,0.656,69.779,0.606
+Drug stopped day 6,13,0.701,0.699,64.1,0.453
+Drug stopped day 6,14,0.665,0.738,60.41,0.333
+Drug stopped day 6,15,0.639,0.771,58.11,0.254
+Drug stopped day 6,16,0.621,0.797,56.686,0.207
+Drug stopped day 6,17,0.608,0.816,55.805,0.18
+Drug stopped day 6,18,0.6,0.829,55.264,0.164
+Drug stopped day 6,19,0.596,0.837,54.939,0.156
+Drug stopped day 6,20,0.593,0.841,54.752,0.151
+Drug continuous,0,1.0,0.5,100.0,1.0
+Drug continuous,1,0.991,0.503,99.978,1.0
+Drug continuous,2,0.979,0.509,99.787,0.999
+Drug continuous,3,0.968,0.515,99.259,0.997
+Drug continuous,4,0.959,0.52,98.482,0.991
+Drug continuous,5,0.952,0.524,97.591,0.981
+Drug continuous,6,0.947,0.527,96.727,0.968
+Drug continuous,7,0.943,0.53,95.973,0.954
+Drug continuous,8,0.94,0.532,95.357,0.938
+Drug continuous,9,0.937,0.533,94.879,0.924
+Drug continuous,10,0.936,0.534,94.519,0.911
+Drug continuous,11,0.935,0.535,94.255,0.899
+Drug continuous,12,0.934,0.535,94.066,0.889
+Drug continuous,13,0.933,0.536,93.932,0.881
+Drug continuous,14,0.933,0.536,93.839,0.875
+Drug continuous,15,0.933,0.536,93.775,0.869
+Drug continuous,16,0.933,0.536,93.731,0.865
+Drug continuous,17,0.932,0.536,93.702,0.862
+Drug continuous,18,0.932,0.536,93.682,0.86
+Drug continuous,19,0.932,0.536,93.669,0.858
+Drug continuous,20,0.932,0.536,93.661,0.857
+Drug continuous,21,0.932,0.536,93.655,0.856
+Drug continuous,22,0.932,0.536,93.651,0.855
+Drug continuous,23,0.932,0.536,93.649,0.855
+Drug continuous,24,0.932,0.536,93.648,0.854
+Drug continuous,25,0.932,0.536,93.647,0.854
+Drug continuous,26,0.932,0.536,93.646,0.854
+Drug continuous,27,0.932,0.536,93.646,0.853
+Drug continuous,28,0.932,0.536,93.646,0.853
+Drug continuous,29,0.932,0.536,93.646,0.853
+Drug continuous,30,0.932,0.536,93.646,0.853

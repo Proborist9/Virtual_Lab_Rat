@@ -19,16 +19,16 @@ class Params:
     t_prolif: float = 1.2       # effector T-cell growth rate (1/day)
     t_death: float = 0.35       # T-cell death rate (1/day)
     t_max: float = 10.0         # carrying capacity (arbitrary units)
-    mismatch: float = 0.8       # donor/recipient mismatch (0 = identical, 1 = maximum)
+    mismatch: float = 1.00     # donor/recipient mismatch (0 = identical, 1 = maximum)
     drug_ic50: float = 0.5      # drug level that halves T-cell growth
     drug_decay: float = 0.9     # drug clearance (1/day)
     infusion: float = 0.0       # drug input rate (set by the experiment runner)
     # graft (kidney) module
     kill_rate: float = 0.12     # graft killing by T cells
-    repair_rate: float = 0.05   # regeneration (1/day)
+    repair_rate: float = 0.5   # regeneration (1/day)
     # cytokine module
     cyt_from_t: float = 0.8
-    cyt_from_damage: float = 1.5
+    cyt_from_damage: float = 18.0
     cyt_clear: float = 1.0
     # kidney function (creatinine)
     cr_clear: float = 4.0       # 1/day
@@ -81,7 +81,7 @@ def make_events():
 # ---------------------------------------------------------------- 5. EXPERIMENT RUNNER
 @dataclass
 class Experiment:
-    days: float = 20.0
+    days: float = 30.0
     drug_dose: float = 5.0
     drug_stop_day: float | None = 6.0    # None = continuous dosing
     params: Params = field(default_factory=Params)
@@ -116,6 +116,7 @@ if __name__ == "__main__":
         "Drug stopped day 6":  Experiment(drug_dose=5.0, drug_stop_day=6.0),
         "Drug continuous":     Experiment(drug_dose=5.0, drug_stop_day=None),
     }
+
     results = {}
     for name, e in scenarios.items():
         t, y, status = run(e)
@@ -143,3 +144,31 @@ if __name__ == "__main__":
         print("\nGraph saved as rejection_cascade.png")
     except ImportError:
         print("\nmatplotlib not installed, so no graph was drawn (results above are still valid).")
+
+    import csv
+    with open("results.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["scenario", "day", "Graft", "Creat", "MAP", "Liver"])
+        for name, (t, y) in results.items():
+            for day in range(0, int(t[-1]) + 1):
+                j = np.searchsorted(t, day)
+                if j < len(t):
+                    writer.writerow([name, day, round(y[IDX["Graft"], j], 3),
+                                     round(y[IDX["Creat"], j], 3),
+                                     round(y[IDX["MAP"], j], 3),
+                                     round(y[IDX["Liver"], j], 3)])
+    print("Saved results.csv")
+
+    import csv
+    with open("results.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["scenario", "day", "Graft", "Creat", "MAP", "Liver"])
+        for name, (t, y) in results.items():
+            for day in range(0, int(t[-1]) + 1):
+                j = np.searchsorted(t, day)
+                if j < len(t):
+                    writer.writerow([name, day, round(y[IDX["Graft"], j], 3),
+                                     round(y[IDX["Creat"], j], 3),
+                                     round(y[IDX["MAP"], j], 3),
+                                     round(y[IDX["Liver"], j], 3)])
+    print("Saved results.csv")
